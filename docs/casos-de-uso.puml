@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Administrador as Admin
+actor Usuario as User
+
+rectangle StockControl {
+  usecase "Autenticar-se" as UCLogin
+  usecase "Consultar produtos ativos" as UCListar
+  usecase "Consultar comentários" as UCVerComentarios
+  usecase "Adicionar comentário" as UCComentar
+  usecase "Registrar movimentação" as UCMovimentar
+  usecase "Cadastrar produto" as UCCadastrar
+  usecase "Editar produto" as UCEditar
+  usecase "Excluir produto" as UCExcluir
+  usecase "Validar dados" as UCValidar
+  usecase "Validar perfil administrador" as UCAdmin
+  usecase "Atualizar saldo em transação" as UCSaldo
+  usecase "Validar saldo disponível" as UCSaldoValido
+}
+
+User --> UCLogin
+User --> UCListar
+User --> UCVerComentarios
+User --> UCComentar
+User --> UCMovimentar
+Admin --> UCLogin
+Admin --> UCListar
+Admin --> UCVerComentarios
+Admin --> UCComentar
+Admin --> UCMovimentar
+Admin --> UCCadastrar
+Admin --> UCEditar
+Admin --> UCExcluir
+
+UCComentar ..> UCLogin : <<include>>
+UCVerComentarios ..> UCLogin : <<include>>
+UCMovimentar ..> UCLogin : <<include>>
+UCCadastrar ..> UCLogin : <<include>>
+UCEditar ..> UCLogin : <<include>>
+UCExcluir ..> UCLogin : <<include>>
+UCCadastrar ..> UCValidar : <<include>>
+UCEditar ..> UCValidar : <<include>>
+UCCadastrar ..> UCAdmin : <<include>>
+UCEditar ..> UCAdmin : <<include>>
+UCExcluir ..> UCAdmin : <<include>>
+UCMovimentar ..> UCSaldo : <<include>>
+UCSaldo ..> UCSaldoValido : <<include>>
+@enduml

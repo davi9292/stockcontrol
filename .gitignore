@@ -1,0 +1,4 @@
+# Imagens enviadas pelos usuários não devem ser versionadas.
+/uploads/*
+!/uploads/.htaccess
+!/uploads/index.html

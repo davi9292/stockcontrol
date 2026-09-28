@@ -1,0 +1,30 @@
+flowchart TD
+    A([Início]) --> B[Administrador informa e-mail e senha]
+    B --> C{Credenciais válidas e conta ativa?}
+    C -- Não --> D[Exibir erro de autenticação]
+    D --> B
+    C -- Sim --> E[Validar perfil administrador]
+    E --> F{É administrador?}
+    F -- Não --> G[Negar acesso ao cadastro]
+    G --> Z([Fim])
+    F -- Sim --> H[Abrir formulário de novo produto]
+    H --> I[Informar nome, descrição, quantidade, preço, status e imagem]
+    I --> J{Campos preenchidos e válidos no navegador?}
+    J -- Não --> K[Exibir validações e manter formulário]
+    K --> I
+    J -- Sim --> L[Servidor valida sessão, perfil, campos e arquivo]
+    L --> M{Validação do servidor passou?}
+    M -- Não --> N[Exibir erros sem gravar produto]
+    N --> I
+    M -- Sim --> O[Gravar produto com data de inclusão automática]
+    O --> P{Administrador deseja registrar comentário inicial?}
+    P -- Sim --> Q[Informar texto do comentário]
+    Q --> R{Texto não vazio?}
+    R -- Não --> S[Exibir erro do comentário]
+    S --> Q
+    R -- Sim --> T[Gravar comentário com usuário e data/hora atuais]
+    P -- Não --> U[Prosseguir sem comentário inicial]
+    T --> V[Redirecionar para a listagem]
+    U --> V
+    V --> W[Exibir produto na lista se estiver ativo]
+    W --> Z([Fim])

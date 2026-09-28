@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">StockControl</title>
+  <desc id="descricao">Ícone de caixa de estoque ao lado do nome StockControl</desc>
+  <g fill="none" stroke="#145A8D" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M8 19 30 8l22 11-22 11L8 19Z" fill="#18A6A6"/>
+    <path d="M8 19v25l22 12V30M52 19v25L30 56"/>
+    <path d="M30 30v26M19 13l22 12"/>
+  </g>
+  <text x="66" y="40" fill="#145A8D" font-family="Arial, sans-serif" font-size="25" font-weight="700">StockControl</text>
+</svg>
